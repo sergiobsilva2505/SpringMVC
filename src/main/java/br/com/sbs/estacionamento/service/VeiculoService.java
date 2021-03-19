@@ -2,19 +2,22 @@ package br.com.sbs.estacionamento.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.sbs.estacionamento.dao.VeiculoDao;
 import br.com.sbs.estacionamento.entities.Veiculo;
 
 
 @Service
 public class VeiculoService {
 	
-	
+	@Autowired
+	private VeiculoDao dao;
 
-	public List<Veiculo> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Veiculo> findAll(){
+		List<Veiculo> lista = dao.lista();
+		return lista;
 	}
 
 }

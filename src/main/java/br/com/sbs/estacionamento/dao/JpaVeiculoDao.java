@@ -15,17 +15,15 @@ public class JpaVeiculoDao implements VeiculoDao {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Veiculo> lista() {
-		 return manager.createQuery("select t from Veiculo t").getResultList();
+		return manager.createQuery("select t from Veiculo t").getResultList();
 	}
 
 	@Override
 	public void adiciona(Veiculo veiculo) {
-		// TODO Auto-generated method stub
 		manager.persist(veiculo);
-		
+
 	}
 
 }

@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.sbs.estacionamento.entities.Veiculo;
 import br.com.sbs.estacionamento.service.VeiculoService;
@@ -17,13 +17,18 @@ public class VeiculoController {
 
 	@Autowired
 	private VeiculoService veiculoService;
+	
+	@RequestMapping("novoVeiculo")
+	public String form() {
+		return "veiculo/formVeiculo";
+	}
 
-	@GetMapping
-	public String lista(Model model) {
-		List<Veiculo> lista = veiculoService.findAll();
-		model.addAttribute("veiculos", lista);
-		return "veiculos";
-
+	@GetMapping("/listaVeiculos")
+	public ModelAndView lista() {
+		ModelAndView model = new ModelAndView("listaVeiculos");
+		List<Veiculo> veiculos = veiculoService.findAll();
+		model.addObject("veiculos",veiculos);
+		return model;
 	}
 
 	@GetMapping()

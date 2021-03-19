@@ -12,6 +12,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Veiculo implements Serializable{
+	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -82,6 +84,12 @@ public class Veiculo implements Serializable{
 
 	public void setTipo(TipoVeiculo tipo) {
 		this.tipo = tipo;
+	}
+	
+	@Override
+	public String toString() {
+		return "Veiculo [id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", cor=" + cor + ", placa=" + placa
+				+ ", tipo=" + tipo + "]";
 	}
 	
 	

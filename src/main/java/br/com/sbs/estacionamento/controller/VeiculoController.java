@@ -20,10 +20,10 @@ public class VeiculoController {
 	
 	@RequestMapping("novoVeiculo")
 	public String form() {
-		return "veiculo/formVeiculo";
+		return "formVeiculo";
 	}
 
-	@GetMapping("/listaVeiculos")
+	@RequestMapping("/listaTodos")
 	public ModelAndView lista() {
 		ModelAndView model = new ModelAndView("listaVeiculos");
 		List<Veiculo> veiculos = veiculoService.findAll();
@@ -31,7 +31,7 @@ public class VeiculoController {
 		return model;
 	}
 
-	@GetMapping()
+	@RequestMapping()
 	public String showForm() {
 		return "index";
 	}

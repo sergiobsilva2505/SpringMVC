@@ -9,8 +9,9 @@
 <body>
 
 	<center>
-		<h1>Estacionamento - Spring MVC</h1>
-		<a href="veiculos/novoVeciulo">ListaVeiculos</a>
+		<h1>Veiculos</h1>
+		<a href="listaTodos">Lista Veiculos</a> - 
+		<a href="novoVeiculo">Novo Veiculo</a>
 	</center>
 
 </body>

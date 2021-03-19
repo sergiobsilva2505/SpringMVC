@@ -8,8 +8,9 @@
 <title>Estacionamento</title>
 </head>
 <body>
-
-	<c:import url="head.jsp" />
-
+	<center>
+		<h1>Estacionamento - Spring MVC</h1>
+		<a href="veiculos/listaTodos">Lista Veiculos</a>
+	</center>
 </body>
 </html>
